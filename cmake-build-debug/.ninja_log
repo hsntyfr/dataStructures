@@ -1,0 +1,17 @@
+# ninja log v5
+0	633	1698332165739221773	CMakeFiles/veriYapilari.dir/main.cpp.o	6e9a2e519802d8b3
+3	494	1698332400150308614	CMakeFiles/veriYapilari.dir/Node.cpp.o	4362bc416a3bf684
+494	529	1698332400186276562	veriYapilari	b05cf1adef250ae6
+3	175	1698332399831947454	CMakeFiles/veriYapilari.dir/Basamak.cpp.o	a7d97512311f9167
+2	149	1698332461134142780	CMakeFiles/veriYapilari.dir/Sayi.cpp.o	e3ae3609f21fb186
+2	161	1698332461146932662	CMakeFiles/veriYapilari.dir/Basamak.cpp.o	a7d97512311f9167
+161	194	1698332461179130862	veriYapilari	4a9e52d39511d332
+2	181	1698332566631002298	CMakeFiles/veriYapilari.dir/Sayi.cpp.o	e3ae3609f21fb186
+181	281	1698332566729680975	veriYapilari	4a9e52d39511d332
+1	171	1698332580393055563	CMakeFiles/veriYapilari.dir/Sayi.cpp.o	e3ae3609f21fb186
+171	205	1698332580426668564	veriYapilari	4a9e52d39511d332
+5	187	1698332672749762465	CMakeFiles/veriYapilari.dir/Basamak.cpp.o	a7d97512311f9167
+5	500	1698332673060113886	CMakeFiles/veriYapilari.dir/Node.cpp.o	4362bc416a3bf684
+2	170	1698332693773006605	CMakeFiles/veriYapilari.dir/Basamak.cpp.o	a7d97512311f9167
+3	171	1698332714687173633	CMakeFiles/veriYapilari.dir/Sayi.cpp.o	e3ae3609f21fb186
+171	204	1698332714719982611	veriYapilari	4a9e52d39511d332
