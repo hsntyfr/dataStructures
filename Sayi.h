@@ -4,14 +4,18 @@
 
 #ifndef VERIYAPILARI_SAYI_H
 #define VERIYAPILARI_SAYI_H
-#include "Node.h"
+#include "Sayi.h"
+#include "Basamak.h"
 
 class Sayi {
 public:
     Sayi();
     ~Sayi();
-    void Add(int data);
-    Node* Head;
+    void Add(Basamak* basamak);
+    void Print();
+
+    Basamak* SayiHead;
+    Sayi* Next;
 };
 
 

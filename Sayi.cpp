@@ -4,31 +4,61 @@
 
 #include "Sayi.h"
 #include "Node.h"
+#include <iostream>
+
 
 Sayi::Sayi() {
-    Head = nullptr;
+    SayiHead = nullptr;
 }
 
-Sayi::~Sayi() {
-    Node* temp = Head;
-    while (temp != nullptr) {
-        Node* next = temp->Next;
-        delete temp;
-        temp = next;
+Sayi::~Sayi()
+{
+    Basamak* tempSayi = SayiHead;
+    while (tempSayi != nullptr)
+    {
+        Basamak* next = tempSayi->Next;
+        Node* tempBasamak = tempSayi->BasamakHead;
+        while (tempBasamak != nullptr)
+        {
+            Node* next = tempBasamak->Next;
+            delete tempBasamak;
+            tempBasamak = next;
+        }
+        delete tempSayi;
+        tempSayi = next;
     }
 }
 
-
-void Sayi::Add(int data) {
-    Node* newNode = new Node(data);
-    if (Head == nullptr) {
-        Head = newNode;
+void Sayi::Add(Basamak *basamak)
+{
+    if (SayiHead == nullptr)
+    {
+        SayiHead = basamak;
     }
-    else {
-        Node* temp = Head;
-        while (temp->Next != nullptr) {
+    else
+    {
+        Basamak* temp = SayiHead;
+        while (temp->Next != nullptr)
+        {
             temp = temp->Next;
         }
-        temp->Next = newNode;
+        temp->Next = basamak;
     }
+}
+
+void Sayi::Print()
+{
+    Basamak* tempSayi = SayiHead;
+    while (tempSayi != nullptr)
+    {
+        Node* tempBasamak = tempSayi->BasamakHead;
+        while (tempBasamak != nullptr)
+        {
+            std::cout << tempBasamak->Data;
+            tempBasamak = tempBasamak->Next;
+        }
+        tempSayi = tempSayi->Next;
+    }
+    std::cout << std::endl;
+
 }

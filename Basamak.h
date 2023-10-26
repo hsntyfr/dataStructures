@@ -9,11 +9,13 @@
 
 
 class Basamak {
+    public:
     Basamak();
     ~Basamak();
     void Add(int data);
 
-    Node* Head;
+    Node* BasamakHead;
+    Basamak* Next;
 };
 
 

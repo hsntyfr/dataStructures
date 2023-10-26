@@ -5,26 +5,31 @@
 #include "Basamak.h"
 
 Basamak::Basamak() {
-    Head = nullptr;
+    BasamakHead = nullptr;
 }
 
 Basamak::~Basamak() {
-    Node* temp = Head;
-    while (temp != nullptr) {
+    Node* temp = BasamakHead;
+    while (temp != nullptr)
+    {
         Node* next = temp->Next;
         delete temp;
         temp = next;
     }
 }
 
-void Basamak::Add(int data) {
+void Basamak::Add(int data)
+{
     Node* newNode = new Node(data);
-    if (Head == nullptr) {
-        Head = newNode;
+    if (BasamakHead == nullptr)
+    {
+        BasamakHead = newNode;
     }
-    else {
-        Node* temp = Head;
-        while (temp->Next != nullptr) {
+    else
+    {
+        Node* temp = BasamakHead;
+        while (temp->Next != nullptr)
+        {
             temp = temp->Next;
         }
         temp->Next = newNode;
