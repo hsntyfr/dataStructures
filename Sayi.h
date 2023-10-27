@@ -11,10 +11,10 @@ class Sayi {
 public:
     Sayi();
     ~Sayi();
-    void Add(Basamak* basamak);
+    void Add(int data);
     void Print();
 
-    Basamak* SayiHead;
+    Basamak* BasamakHead;
     Sayi* Next;
 };
 

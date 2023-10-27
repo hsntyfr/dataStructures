@@ -10,11 +10,10 @@
 
 class Basamak {
     public:
-    Basamak();
+    Basamak(int data);
     ~Basamak();
-    void Add(int data);
 
-    Node* BasamakHead;
+    int Data;
     Basamak* Next;
 };
 

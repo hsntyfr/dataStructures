@@ -1,7 +1,7 @@
 //
 // Created by Hasan Tayfur on 26.10.2023.
 //
-
+/*
 #ifndef VERIYAPILARI_NODE_H
 #define VERIYAPILARI_NODE_H
 
@@ -18,4 +18,4 @@ public:
 
 
 
-#endif //VERIYAPILARI_NODE_H
+#endif //VERIYAPILARI_NODE_H*/

@@ -3,35 +3,16 @@
 //
 
 #include "Basamak.h"
+#include <iostream>
 
-Basamak::Basamak() {
-    BasamakHead = nullptr;
+Basamak::Basamak(int data)
+{
+    Data = data;
+    Next = nullptr;
 }
 
 Basamak::~Basamak() {
-    Node* temp = BasamakHead;
-    while (temp != nullptr)
-    {
-        Node* next = temp->Next;
-        delete temp;
-        temp = next;
-    }
+    std::cout << "basamak silindi" << std::endl;
 }
 
-void Basamak::Add(int data)
-{
-    Node* newNode = new Node(data);
-    if (BasamakHead == nullptr)
-    {
-        BasamakHead = newNode;
-    }
-    else
-    {
-        Node* temp = BasamakHead;
-        while (temp->Next != nullptr)
-        {
-            temp = temp->Next;
-        }
-        temp->Next = newNode;
-    }
-}
+
