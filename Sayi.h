@@ -13,6 +13,7 @@ public:
     ~Sayi();
     void Add(int data);
     void Print();
+    void Delete(Sayi* sayi);
 
     Basamak* BasamakHead;
     Sayi* Next;

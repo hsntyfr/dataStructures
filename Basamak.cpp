@@ -12,7 +12,10 @@ Basamak::Basamak(int data)
 }
 
 Basamak::~Basamak() {
-    std::cout << "basamak silindi" << std::endl;
+    std::cout << "basamak silme çağrıldı" << std::endl;
+
 }
+
+
 
 

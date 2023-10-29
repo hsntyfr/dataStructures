@@ -14,19 +14,6 @@ Sayi::Sayi() {
 Sayi::~Sayi()
 {
     std::cout << "sayi silindi" << std::endl;
-    while (BasamakHead != nullptr)
-    {
-        while (BasamakHead != nullptr)
-        {
-            Basamak* SayiHeadConst = BasamakHead;
-            BasamakHead = BasamakHead->Next;
-            delete SayiHeadConst;
-        }
-
-        Sayi* SayiHeadConst2 = Next;
-        Next = Next->Next;
-        delete SayiHeadConst2;
-    }
 }
 
 void Sayi::Add(int data)
@@ -45,18 +32,29 @@ void Sayi::Add(int data)
         }
         temp->Next = basamak;
     }
-
-
 }
 
 void Sayi::Print()
 {
-   Basamak* SayiHeadConst = BasamakHead;
 
+}
 
-
-
-
+void Sayi::Delete(Sayi *sayi)
+{
+    Sayi *temp = sayi;
+    while (temp != nullptr)
+    {
+        Sayi *temp5 = temp;
+        Basamak *temp2 = temp->BasamakHead;
+        while (temp2 != nullptr)
+        {
+            Basamak *temp3 = temp2;
+            temp2 = temp2->Next;
+            delete temp3;
+        }
+        temp = temp->Next;
+        delete temp5;
+    }
 }
 
 
