@@ -2,20 +2,21 @@
 // Created by Hasan Tayfur on 26.10.2023.
 //
 
-#ifndef VERIYAPILARI_BASAMAK_H
-#define VERIYAPILARI_BASAMAK_H
+#ifndef VERI_YAPILARI_1_LINKEDLIST_H
+#define VERI_YAPILARI_1_LINKEDLIST_H
 
 #include "Node.h"
 
 
 class Basamak {
-    public:
-    Basamak(int data);
+public:
+    Basamak();
     ~Basamak();
 
-    int Data;
-    Basamak* Next;
+    void Add(int data);
+
+    Node* Head;
 };
 
 
-#endif //VERIYAPILARI_BASAMAK_H
+#endif //VERI_YAPILARI_1_LINKEDLIST_H

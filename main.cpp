@@ -1,49 +1,45 @@
 #include <iostream>
 #include <fstream>
+#include "Basamak.h"
 #include "Sayi.h"
+#include "Node.h"
+
 using namespace std;
 
-int main() {
-
+int main()
+{
     string line;
     ifstream read("sayilar.txt");
-
-    Sayi *sayi = new Sayi();
-    Sayi *original = sayi;
+    Basamak* basamak = new Basamak();
+    Sayi* sayi = new Sayi();
 
     if (read.is_open())
     {
         getline(read, line);
         cout << line << endl;
-
         for (int i = 0; i < line.length(); ++i)
         {
-            if (line[i] != ' ')
+            /*if (line[i] != ' ')
             {
-                cout << sayi << endl;
-                cout << "basamak eklendi" << endl;
-                cout << i << endl;
-                sayi->Add(i);
-            }
-            else if (line[i] == ' ')
-            {
-                cout << "yeni sayıya geçildi" << endl;
-                sayi->Next = new Sayi();
-                sayi = sayi->Next;
+                basamak->Add(line[i]);
             }
             else
             {
-                cout << "main else eklerken hatalar var" << endl;
-            }
+                basamak = new Basamak();
+                sayi->Add(basamak);
+            }*/
         }
-        read.close();
     }
     else
     {
-        cout << "Unable to open file";
+        cout << "Unable to open file" << endl;
     }
 
-    sayi = original;
-    sayi->Delete(sayi);
+
+
+
+
+
+
     return 0;
 }

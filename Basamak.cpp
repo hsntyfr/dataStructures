@@ -3,19 +3,44 @@
 //
 
 #include "Basamak.h"
+#include "Sayi.h"
+#include "Node.h"
 #include <iostream>
 
-Basamak::Basamak(int data)
+using namespace std;
+
+Basamak::Basamak()
 {
-    Data = data;
-    Next = nullptr;
+    this->Head = NULL;
 }
 
-Basamak::~Basamak() {
-    std::cout << "basamak silme çağrıldı" << std::endl;
+Basamak::~Basamak()
+{
+    cout << "Basamak deleted" << endl;
 
+    Node* temp = this->Head;
+    while(temp != NULL)
+    {
+        Node* next = temp->Next;
+        delete temp;
+        temp = next;
+    }
 }
 
-
-
-
+void Basamak::Add(int data)
+{
+    Node *newNode = new Node(data);
+    if (this->Head == NULL)
+    {
+        this->Head = newNode;
+    }
+    else
+    {
+        Node *temp = this->Head;
+        while (temp->Next != NULL)
+        {
+            temp = temp->Next;
+        }
+        temp->Next = newNode;
+    }
+}

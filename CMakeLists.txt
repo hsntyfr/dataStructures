@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.26)
-project(veriYapilari)
+project(untitled2)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(veriYapilari main.cpp
-        Node.h
-        Sayi.h
-        Basamak.h
+add_executable(untitled2 main.cpp
         Node.cpp
+        Node.h
         Basamak.cpp
-        Sayi.cpp)
+        Basamak.h
+        Sayi.cpp
+        Sayi.h
+)

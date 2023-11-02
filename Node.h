@@ -1,14 +1,18 @@
 //
 // Created by Hasan Tayfur on 26.10.2023.
 //
-/*
-#ifndef VERIYAPILARI_NODE_H
-#define VERIYAPILARI_NODE_H
+
+#ifndef VERI_YAPILARI_1_Node_H
+#define VERI_YAPILARI_1_Node_H
 
 
-class Node {
+#include "Basamak.h"
+
+
+class Node{
 public:
     Node(int data);
+    Node(Basamak* basamak);
     ~Node();
 
     int Data;
@@ -16,6 +20,4 @@ public:
 };
 
 
-
-
-#endif //VERIYAPILARI_NODE_H*/
+#endif //VERI_YAPILARI_1_Node_H

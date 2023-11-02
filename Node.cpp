@@ -2,16 +2,26 @@
 // Created by Hasan Tayfur on 26.10.2023.
 //
 
-#include "Node.h"
 #include <iostream>
+#include "Node.h"
+#include "Basamak.h"
+#include "Sayi.h"
 
 
-/*Node::Node(int data) {
-    Data = data;
-    Next = NULL;
+using namespace std;
+
+Node::Node(int data) {
+    this->Data = data;
+    this->Next = NULL;
+}
+
+Node::Node(Basamak *basamak) {
+    this->Data = basamak->Head;
+    this->Next = NULL;
 }
 
 Node::~Node() {
-    std::cout << "Node deleted" << std::endl;
-}*/
+    cout << "Node deleted" << endl;
+}
+
 

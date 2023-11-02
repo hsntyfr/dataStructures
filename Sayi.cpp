@@ -2,59 +2,57 @@
 // Created by Hasan Tayfur on 26.10.2023.
 //
 
-#include "Sayi.h"
 #include <iostream>
+#include "Sayi.h"
+#include "Node.h"
+#include "Basamak.h"
 
 
-Sayi::Sayi() {
-    BasamakHead = nullptr;
-    Next = nullptr;
+using namespace std;
+
+Sayi::Sayi()
+{
+    this->Head = NULL;
 }
 
 Sayi::~Sayi()
 {
-    std::cout << "sayi silindi" << std::endl;
+    cout << "Sayi deleted" << endl;
+
+    Node* temp = this->Head;
+    while(temp != NULL)
+    {
+        Node* next = temp->Next;
+        delete temp;
+        temp = next;
+    }
 }
 
-void Sayi::Add(int data)
+void Sayi::Add(Basamak *basamak)
 {
-    Basamak* basamak = new Basamak(data);
-    if (BasamakHead == nullptr)
+    Node *newNode = new Node(basamak);
+    if (this->Head == NULL)
     {
-        BasamakHead = basamak;
+        this->Head = newNode;
     }
     else
     {
-        Basamak* temp = BasamakHead;
-        while (temp->Next != nullptr)
+        Node *temp = this->Head;
+        while (temp->Next != NULL)
         {
             temp = temp->Next;
         }
-        temp->Next = basamak;
+        temp->Next = newNode;
     }
 }
 
-void Sayi::Print()
+/*void Sayi::Print()
 {
-
-}
-
-void Sayi::Delete(Sayi *sayi)
-{
-    Sayi *temp = sayi;
-    while (temp != nullptr)
+    Node *temp = this->Head;
+    while (temp != NULL)
     {
-        Sayi *temp5 = temp;
-        Basamak *temp2 = temp->BasamakHead;
-        while (temp2 != nullptr)
-        {
-            Basamak *temp3 = temp2;
-            temp2 = temp2->Next;
-            delete temp3;
-        }
+        cout << temp->Data << " ";
         temp = temp->Next;
-        delete temp5;
     }
-}
-
-
+    cout << endl;
+}*/
