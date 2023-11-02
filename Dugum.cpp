@@ -8,7 +8,7 @@ using namespace std;
 
 Dugum::Dugum(Sayi *sayi)
 {
-    cout << "Dugum olusturuldu" << endl;
+    //cout << "Dugum olusturuldu" << endl;
     this->sayi = sayi;
     this->Sonraki = nullptr;
 }

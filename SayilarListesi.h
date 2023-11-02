@@ -4,8 +4,8 @@
 
 #ifndef VERIYAPILARI2_SAYILARLISTESI_H
 #define VERIYAPILARI2_SAYILARLISTESI_H
-#include "Sayi.h"
 #include "Dugum.h"
+
 
 
 class SayilarListesi {
@@ -14,6 +14,12 @@ public:
     ~SayilarListesi();
 
     void Ekle(Dugum *dugum);
+    void Yazdir();
+    void KenarlikOlustur(Sayi *sayi);
+    void OrtaOlustur(Sayi *sayi);
+    void TekBasaAl();
+
+    //void YazdirAdres();
 
     Dugum *IlkSayi;
 };

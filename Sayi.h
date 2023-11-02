@@ -5,7 +5,8 @@
 #ifndef VERIYAPILARI2_SAYI_H
 #define VERIYAPILARI2_SAYI_H
 #include "Basamak.h"
-
+#include "iostream"
+using namespace std;
 
 class Sayi {
 
@@ -14,6 +15,14 @@ public:
     ~Sayi();
 
     void Ekle(Basamak *basamak);
+    void Yazdir();
+    int BasamakSayisi();
+    void YazdirAdres();
+    void YazdirVeri();
+    void SayiOlustur();
+    string To_string();
+
+
 
     Basamak *IlkBasamak;
 

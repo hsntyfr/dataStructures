@@ -4,7 +4,9 @@
 
 #include "Basamak.h"
 #include "iostream"
+#include "sstream"
 using namespace std;
+
 Basamak::Basamak(int basamakDegeri)
 {
     this->BasamakDegeri = basamakDegeri;
@@ -15,4 +17,11 @@ Basamak::~Basamak()
 {
     cout << "Basamak silindi" << endl;
     cout << this->BasamakDegeri << endl;
+}
+
+string Basamak::To_string()
+{
+    stringstream ss;
+    ss << this;
+    return ss.str();
 }

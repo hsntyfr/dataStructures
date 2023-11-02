@@ -6,6 +6,7 @@
 #define VERIYAPILARI2_DUGUM_H
 #include "Sayi.h"
 
+
 class Dugum {
 public:
     Dugum(Sayi *sayi);
