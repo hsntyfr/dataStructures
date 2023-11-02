@@ -1,58 +1,40 @@
 //
-// Created by Hasan Tayfur on 26.10.2023.
+// Created by Hasan Tayfur on 2.11.2023.
 //
 
-#include <iostream>
 #include "Sayi.h"
-#include "Node.h"
-#include "Basamak.h"
-
-
+#include "iostream"
 using namespace std;
 
 Sayi::Sayi()
 {
-    this->Head = NULL;
+    this->IlkBasamak = nullptr;
 }
 
 Sayi::~Sayi()
 {
-    cout << "Sayi deleted" << endl;
-
-    Node* temp = this->Head;
-    while(temp != NULL)
+    cout << "Sayi silindi" << endl;
+    while (this->IlkBasamak != nullptr)
     {
-        Node* next = temp->Next;
+        Basamak *temp = this->IlkBasamak;
+        this->IlkBasamak = this->IlkBasamak->Sonraki;
         delete temp;
-        temp = next;
     }
 }
 
-void Sayi::Add(Basamak *basamak)
+void Sayi::Ekle(Basamak *basamak)
 {
-    Node *newNode = new Node(basamak);
-    if (this->Head == NULL)
+    Basamak *temp = this->IlkBasamak;
+    if (this->IlkBasamak == nullptr)
     {
-        this->Head = newNode;
+        this->IlkBasamak = basamak;
     }
     else
     {
-        Node *temp = this->Head;
-        while (temp->Next != NULL)
+        while (temp->Sonraki != nullptr)
         {
-            temp = temp->Next;
+            temp = temp->Sonraki;
         }
-        temp->Next = newNode;
+        temp->Sonraki = basamak;
     }
 }
-
-/*void Sayi::Print()
-{
-    Node *temp = this->Head;
-    while (temp != NULL)
-    {
-        cout << temp->Data << " ";
-        temp = temp->Next;
-    }
-    cout << endl;
-}*/

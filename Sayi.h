@@ -1,24 +1,23 @@
 //
-// Created by Hasan Tayfur on 26.10.2023.
+// Created by Hasan Tayfur on 2.11.2023.
 //
 
-#ifndef UNTITLED2_SAYI_H
-#define UNTITLED2_SAYI_H
-#include "Node.h"
+#ifndef VERIYAPILARI2_SAYI_H
+#define VERIYAPILARI2_SAYI_H
 #include "Basamak.h"
 
+
 class Sayi {
+
 public:
     Sayi();
     ~Sayi();
 
-    void Add(Basamak* basamak);
+    void Ekle(Basamak *basamak);
 
-
-private:
-    Node* Head;
+    Basamak *IlkBasamak;
 
 };
 
 
-#endif //UNTITLED2_SAYI_H
+#endif //VERIYAPILARI2_SAYI_H

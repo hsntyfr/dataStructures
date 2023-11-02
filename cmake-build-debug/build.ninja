@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: untitled2
+# Project: veriYapilari2
 # Configurations: Debug
 # =============================================================================
 
@@ -39,62 +39,68 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/hasantayfur/CLionProjects/veriYapilari1/cmake-build-debug/
+cmake_ninja_workdir = /Users/hasantayfur/CLionProjects/veriYapilari2/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target untitled2
+# Object build statements for EXECUTABLE target veriYapilari2
 
 
 #############################################
-# Order-only phony target for untitled2
+# Order-only phony target for veriYapilari2
 
-build cmake_object_order_depends_target_untitled2: phony || CMakeFiles/untitled2.dir
+build cmake_object_order_depends_target_veriYapilari2: phony || CMakeFiles/veriYapilari2.dir
 
-build CMakeFiles/untitled2.dir/main.cpp.o: CXX_COMPILER__untitled2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari1/main.cpp || cmake_object_order_depends_target_untitled2
-  DEP_FILE = CMakeFiles/untitled2.dir/main.cpp.o.d
+build CMakeFiles/veriYapilari2.dir/main.cpp.o: CXX_COMPILER__veriYapilari2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari2/main.cpp || cmake_object_order_depends_target_veriYapilari2
+  DEP_FILE = CMakeFiles/veriYapilari2.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/untitled2.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled2.dir
+  OBJECT_DIR = CMakeFiles/veriYapilari2.dir
+  OBJECT_FILE_DIR = CMakeFiles/veriYapilari2.dir
 
-build CMakeFiles/untitled2.dir/Node.cpp.o: CXX_COMPILER__untitled2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari1/Node.cpp || cmake_object_order_depends_target_untitled2
-  DEP_FILE = CMakeFiles/untitled2.dir/Node.cpp.o.d
+build CMakeFiles/veriYapilari2.dir/Basamak.cpp.o: CXX_COMPILER__veriYapilari2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari2/Basamak.cpp || cmake_object_order_depends_target_veriYapilari2
+  DEP_FILE = CMakeFiles/veriYapilari2.dir/Basamak.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/untitled2.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled2.dir
+  OBJECT_DIR = CMakeFiles/veriYapilari2.dir
+  OBJECT_FILE_DIR = CMakeFiles/veriYapilari2.dir
 
-build CMakeFiles/untitled2.dir/Basamak.cpp.o: CXX_COMPILER__untitled2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari1/Basamak.cpp || cmake_object_order_depends_target_untitled2
-  DEP_FILE = CMakeFiles/untitled2.dir/Basamak.cpp.o.d
+build CMakeFiles/veriYapilari2.dir/Sayi.cpp.o: CXX_COMPILER__veriYapilari2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari2/Sayi.cpp || cmake_object_order_depends_target_veriYapilari2
+  DEP_FILE = CMakeFiles/veriYapilari2.dir/Sayi.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/untitled2.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled2.dir
+  OBJECT_DIR = CMakeFiles/veriYapilari2.dir
+  OBJECT_FILE_DIR = CMakeFiles/veriYapilari2.dir
 
-build CMakeFiles/untitled2.dir/Sayi.cpp.o: CXX_COMPILER__untitled2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari1/Sayi.cpp || cmake_object_order_depends_target_untitled2
-  DEP_FILE = CMakeFiles/untitled2.dir/Sayi.cpp.o.d
+build CMakeFiles/veriYapilari2.dir/Dugum.cpp.o: CXX_COMPILER__veriYapilari2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari2/Dugum.cpp || cmake_object_order_depends_target_veriYapilari2
+  DEP_FILE = CMakeFiles/veriYapilari2.dir/Dugum.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/untitled2.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled2.dir
+  OBJECT_DIR = CMakeFiles/veriYapilari2.dir
+  OBJECT_FILE_DIR = CMakeFiles/veriYapilari2.dir
+
+build CMakeFiles/veriYapilari2.dir/SayilarListesi.cpp.o: CXX_COMPILER__veriYapilari2_unscanned_Debug /Users/hasantayfur/CLionProjects/veriYapilari2/SayilarListesi.cpp || cmake_object_order_depends_target_veriYapilari2
+  DEP_FILE = CMakeFiles/veriYapilari2.dir/SayilarListesi.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/veriYapilari2.dir
+  OBJECT_FILE_DIR = CMakeFiles/veriYapilari2.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target untitled2
+# Link build statements for EXECUTABLE target veriYapilari2
 
 
 #############################################
-# Link the executable untitled2
+# Link the executable veriYapilari2
 
-build untitled2: CXX_EXECUTABLE_LINKER__untitled2_Debug CMakeFiles/untitled2.dir/main.cpp.o CMakeFiles/untitled2.dir/Node.cpp.o CMakeFiles/untitled2.dir/Basamak.cpp.o CMakeFiles/untitled2.dir/Sayi.cpp.o
+build veriYapilari2: CXX_EXECUTABLE_LINKER__veriYapilari2_Debug CMakeFiles/veriYapilari2.dir/main.cpp.o CMakeFiles/veriYapilari2.dir/Basamak.cpp.o CMakeFiles/veriYapilari2.dir/Sayi.cpp.o CMakeFiles/veriYapilari2.dir/Dugum.cpp.o CMakeFiles/veriYapilari2.dir/SayilarListesi.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
-  OBJECT_DIR = CMakeFiles/untitled2.dir
+  OBJECT_DIR = CMakeFiles/veriYapilari2.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = untitled2
-  TARGET_PDB = untitled2.dbg
+  TARGET_FILE = veriYapilari2
+  TARGET_PDB = veriYapilari2.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/hasantayfur/CLionProjects/veriYapilari1/cmake-build-debug && /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /Users/hasantayfur/CLionProjects/veriYapilari2/cmake-build-debug && /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -105,7 +111,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/hasantayfur/CLionProjects/veriYapilari1/cmake-build-debug && /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/hasantayfur/CLionProjects/veriYapilari1 -B/Users/hasantayfur/CLionProjects/veriYapilari1/cmake-build-debug
+  COMMAND = cd /Users/hasantayfur/CLionProjects/veriYapilari2/cmake-build-debug && /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/hasantayfur/CLionProjects/veriYapilari2 -B/Users/hasantayfur/CLionProjects/veriYapilari2/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -121,9 +127,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /Users/hasantayfur/CLionProjects/veriYapilari1/cmake-build-debug
+# Folder: /Users/hasantayfur/CLionProjects/veriYapilari2/cmake-build-debug
 
-build all: phony untitled2
+build all: phony veriYapilari2
 
 # =============================================================================
 # Built-in targets
@@ -132,14 +138,14 @@ build all: phony untitled2
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/hasantayfur/CLionProjects/veriYapilari1/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/hasantayfur/CLionProjects/veriYapilari2/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/hasantayfur/CLionProjects/veriYapilari1/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Users/hasantayfur/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/hasantayfur/CLionProjects/veriYapilari2/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################
