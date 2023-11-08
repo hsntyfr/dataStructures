@@ -18,6 +18,9 @@ public:
     void KenarlikOlustur(Sayi *sayi);
     void OrtaOlustur(Sayi *sayi);
     void TekBasaAl();
+    void BasamaklariTersle();
+    void EnBuyukCikar();
+
 
     //void YazdirAdres();
 

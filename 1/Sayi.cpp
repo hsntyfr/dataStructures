@@ -19,6 +19,7 @@ Sayi::~Sayi()
     while (this->IlkBasamak != nullptr)
     {
         Basamak *temp = this->IlkBasamak;
+
         this->IlkBasamak = this->IlkBasamak->Sonraki;
         delete temp;
     }
@@ -79,7 +80,7 @@ void Sayi::YazdirAdres()
     cout << endl;
 }
 
-void Sayi::SayiOlustur()
+string Sayi::SayiOlustur()
 {
     Basamak *temp = this->IlkBasamak;
     string veri = "";
@@ -88,13 +89,14 @@ void Sayi::SayiOlustur()
         veri += to_string(temp->BasamakDegeri);
         temp = temp->Sonraki;
     }
-    cout << "#" << setw(8) << veri << "#    ";
+    //cout << "#" << setw(8) << veri << "#    ";
+    return veri;
 }
 
 void Sayi::YazdirVeri()
 {
-    Sayi *temp = this;
-    this->SayiOlustur();
+    cout << "#" << setw(8) << this->SayiOlustur() << "#    ";
+    //this->SayiOlustur();
     /*while (temp->IlkBasamak->Sonraki != nullptr)
     {
         veri += to_string(temp->IlkBasamak->BasamakDegeri);
@@ -116,4 +118,51 @@ string Sayi::To_string()
     stringstream ss;
     ss << this;
     return ss.str();
+}
+
+void Sayi::BasamaklariTersle()
+{
+    Basamak *temp = this->IlkBasamak;
+    Basamak *temp2 = nullptr;
+    Basamak *prev = nullptr;
+
+    while (temp != nullptr)
+    {
+        temp2 = temp->Sonraki;
+        temp->Sonraki = prev;
+        prev = temp;
+        temp = temp2;
+    }
+    this->IlkBasamak = prev;
+
+}
+
+void Sayi::TekBasaAl()
+{
+    int basamakSayisi = this->BasamakSayisi();
+    cout << "Basamak sayisi: " << basamakSayisi << endl;
+
+    Basamak *iter = this->IlkBasamak;
+    Basamak *head = this->IlkBasamak;
+    Basamak *temp = head->Sonraki;
+    Basamak *temp2 = temp->Sonraki;
+    Basamak *prev = nullptr;
+
+    while (iter->Sonraki != nullptr)
+    {
+        if (head->BasamakDegeri % 2 == 0)
+        {
+            head->Sonraki = temp2;
+            temp->Sonraki = head;
+            head = temp;
+        }
+        iter = iter->Sonraki;
+    }
+
+
+}
+
+void Sayi::EnBuyukCikar()
+{
+
 }

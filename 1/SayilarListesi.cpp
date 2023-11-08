@@ -76,10 +76,27 @@ void SayilarListesi::OrtaOlustur(Sayi *sayi)
 
 void SayilarListesi::TekBasaAl()
 {
-    Basamak *temp = this->IlkSayi->sayi->IlkBasamak;
-    Basamak *ilk = this->IlkSayi->sayi->IlkBasamak;
+    Dugum *temp = this->IlkSayi;
+    /*while (temp != nullptr)
+    {
+        temp->sayi->TekBasaAl();
+        temp = temp->Sonraki;
+    }*/
+    temp->sayi->TekBasaAl();
+}
 
+void SayilarListesi::BasamaklariTersle()
+{
+    Dugum *temp = this->IlkSayi;
+    while (temp != nullptr)
+    {
+        temp->sayi->BasamaklariTersle();
+        temp = temp->Sonraki;
+    }
+}
 
+void SayilarListesi::EnBuyukCikar()
+{
 
 }
 
