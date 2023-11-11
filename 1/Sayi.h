@@ -19,11 +19,11 @@ public:
     int BasamakSayisi();
     void YazdirAdres();
     void YazdirVeri();
-    string SayiOlustur();
+    int SayiOlustur();
     string To_string();
     void BasamaklariTersle();
     void TekBasaAl();
-    void EnBuyukCikar();
+
 
 
 

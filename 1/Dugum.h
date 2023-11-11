@@ -11,6 +11,7 @@ class Dugum {
 public:
     Dugum(Sayi *sayi);
     ~Dugum();
+    void TekBasaAl();
     Sayi *sayi;
     Dugum *Sonraki;
 

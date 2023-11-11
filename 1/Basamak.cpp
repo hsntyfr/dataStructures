@@ -15,8 +15,8 @@ Basamak::Basamak(int basamakDegeri)
 
 Basamak::~Basamak()
 {
-    cout << "Basamak silindi" << endl;
-    cout << this->BasamakDegeri << endl;
+    //cout << "Basamak silindi" << endl;
+    //cout << this->BasamakDegeri << endl;
 }
 
 string Basamak::To_string()

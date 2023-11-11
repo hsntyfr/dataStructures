@@ -45,11 +45,17 @@ int main()
     sl->Ekle(d);
 
     sl->Yazdir();
-    sl->BasamaklariTersle();
 
-    cout << endl;
+    sl->EnBuyukCikar();
+    sl->EnBuyukCikar();
+    sl->EnBuyukCikar();
+    sl->EnBuyukCikar();
+    sl->EnBuyukCikar();
 
-    sl->Yazdir();
+
+
+
+
 
 
 

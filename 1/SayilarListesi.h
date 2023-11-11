@@ -20,6 +20,7 @@ public:
     void TekBasaAl();
     void BasamaklariTersle();
     void EnBuyukCikar();
+    int SayiAdet();
 
 
     //void YazdirAdres();
