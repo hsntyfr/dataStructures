@@ -12,6 +12,7 @@ int main()
     Dugum *d = new Dugum(s);
     Basamak *b = new Basamak(0);
     int sayi;
+    int secim = 0;
     string sayilar;
 
     ifstream read("Sayilar.txt");
@@ -44,17 +45,11 @@ int main()
     d = new Dugum(s);
     sl->Ekle(d);
 
+
+
     sl->Yazdir();
-
-    sl->EnBuyukCikar();
-    sl->EnBuyukCikar();
-    sl->EnBuyukCikar();
-    sl->EnBuyukCikar();
-    sl->EnBuyukCikar();
-
-
-
-
+cout << endl << endl << endl << endl;
+    sl->TekBasaAl();
 
 
 

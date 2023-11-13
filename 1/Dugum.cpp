@@ -46,7 +46,6 @@ void Dugum::TekBasaAl()
         else
         {
             this->sayi->IlkBasamak = this->sayi->IlkBasamak->Sonraki;
-            cout << "deneme" << endl;
             break;
         }
     }

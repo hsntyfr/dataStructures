@@ -23,6 +23,8 @@ public:
     string To_string();
     void BasamaklariTersle();
     void TekBasaAl();
+    void TekBasaAl2();
+
 
 
 

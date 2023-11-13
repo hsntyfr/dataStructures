@@ -76,7 +76,17 @@ void SayilarListesi::OrtaOlustur(Sayi *sayi)
 
 void SayilarListesi::TekBasaAl()
 {
-    int i = 0;
+
+    Dugum *temp = this->IlkSayi;
+    //temp->sayi->TekBasaAl();
+    while (temp != nullptr)
+    {
+        temp->sayi->TekBasaAl();
+        temp->sayi->TekBasaAl2();
+        temp->sayi->TekBasaAl2();
+        temp = temp->Sonraki;
+    }
+    /*int i = 0;
     Dugum *temp = this->IlkSayi;
     while (temp != nullptr)
     {
@@ -87,7 +97,8 @@ void SayilarListesi::TekBasaAl()
         temp = temp->Sonraki;
     }
     cout << "basarili" << endl;
-    //temp->sayi->TekBasaAl();
+    //temp->sayi->TekBasaAl();*/
+    this->Yazdir();
 }
 
 void SayilarListesi::BasamaklariTersle()
@@ -98,6 +109,7 @@ void SayilarListesi::BasamaklariTersle()
         temp->sayi->BasamaklariTersle();
         temp = temp->Sonraki;
     }
+    this->Yazdir();
 }
 
 void SayilarListesi::EnBuyukCikar()
@@ -177,10 +189,9 @@ void SayilarListesi::EnBuyukCikar()
 
     int highest = 0;
     int number = 0;
-    int index = 0;
-    int counter = 0;
+
     Dugum *deleted = nullptr;
-    counter = this->SayiAdet();
+    int counter = this->SayiAdet();
 
     while (temp != nullptr)
     {
@@ -225,21 +236,17 @@ void SayilarListesi::EnBuyukCikar()
         delete deleted;
     }
 
-    //cout << counter << endl;
+   //cout << counter << endl;
 
     if (counter == 1)
     {
-        cout << "Listede eleman kalmadi" << endl;
+        cout << "Listede eleman kalmadı" << endl;
     }
     else
     {
         this->Yazdir();
         cout << endl;
     }
-
-
-
-
 }
 
 int SayilarListesi::SayiAdet() {

@@ -15,7 +15,7 @@ Sayi::Sayi()
 
 Sayi::~Sayi()
 {
-    //cout << "Sayi silindi" << endl;
+    cout << "Sayi silindi" << endl;
     while (this->IlkBasamak != nullptr)
     {
         Basamak *temp = this->IlkBasamak;
@@ -139,34 +139,218 @@ void Sayi::BasamaklariTersle()
 
 }
 
+int calismaSayisi = 0;
+
+Basamak *endtemp = nullptr;
+
 void Sayi::TekBasaAl()
 {
+
     Basamak *temp = this->IlkBasamak;
-    Basamak *head = this->IlkBasamak;
-    Basamak *iter = this->IlkBasamak;
-    Basamak *last = this->IlkBasamak;
     Basamak *temp2 = this->IlkBasamak;
-    int a = this->BasamakSayisi();
-    int c = 0;
+    Basamak *head = this->IlkBasamak;
+    Basamak *end = this->IlkBasamak;
+    Basamak *headTemp = this->IlkBasamak;
+
+    int count = this->BasamakSayisi();
 
 
-    while (last->Sonraki != nullptr)
+    while (end->Sonraki != nullptr)
     {
-        last = last->Sonraki;
+        end = end->Sonraki;
+    }
+    endtemp = end;
+
+
+    while (temp != endtemp)
+    {
+        if (temp->BasamakDegeri % 2 == 0 && count > 1 && temp == head)
+        {
+            temp2 = temp;
+
+            head = head->Sonraki;
+
+            temp2->Sonraki = nullptr;
+
+            end->Sonraki = temp2;
+
+            end = end->Sonraki;
+
+            this->IlkBasamak = head;
+            temp = head;
+            calismaSayisi++;
+        }
+        else
+        {
+            temp = temp->Sonraki;
+        }
     }
 
+    temp = this->IlkBasamak;
+    temp2 = this->IlkBasamak;
+    head = this->IlkBasamak;
+    endtemp = nullptr;
+    end = this->IlkBasamak;
 
 
-    /*if (iter->BasamakDegeri % 2 = 0)
+
+
+
+    /*if (temp->BasamakDegeri % 2 == 0 && count > 1 && temp == headTemp)
     {
-        temp = iter;
-        this->IlkBasamak = this->IlkBasamak->Sonraki;
-        last->Sonraki = temp;
-        last = last->Sonraki;
-        last->Sonraki = nullptr;
+        temp2 = temp;
+
+        head = head->Sonraki;
+
+        temp2->Sonraki = nullptr;
+
+        end->Sonraki = temp2;
+
+        end = end->Sonraki;
+
+        this->IlkBasamak = head;
+    }*/
+    /*while (temp == endtemp)
+    {
+        if (temp->BasamakDegeri % 2 == 0)
+        {
+            if (temp == head)
+            {
+                temp2 = temp;
+                temp = temp->Sonraki;
+                temp2->Sonraki == nullptr;
+                end->Sonraki = temp2;
+                end = end->Sonraki;
+            }
+        }
         temp = temp->Sonraki;
     }*/
+    //çalışıyor ama adresleri değişti new olmadan yap
+    /*Basamak *temp = this->IlkBasamak;
+    Basamak *temp2 = this->IlkBasamak;
 
+    Basamak *added;
+    Sayi *evens = new Sayi();
+    Sayi *odds = new Sayi();
+    Basamak *oddsTemp = nullptr;
+
+    int a;
+
+    while (temp != nullptr)
+    {
+        a = temp->BasamakDegeri;
+        if (temp->BasamakDegeri % 2 == 0)
+        {
+            temp2 = temp;
+            //temp2->Sonraki = nullptr;
+            added = new Basamak(temp2->BasamakDegeri);
+            evens->Ekle(added);
+            cout << added->BasamakDegeri << endl;
+        }
+        else
+        {
+            temp2 = temp;
+            //temp2->Sonraki = nullptr;
+            added = new Basamak(temp2->BasamakDegeri);
+            odds->Ekle(added);
+            cout << added->BasamakDegeri << endl;
+        }
+        temp = temp->Sonraki;
+    }
+
+    cout<< endl << evens->BasamakSayisi() << endl;
+    cout << odds->BasamakSayisi() << endl;
+
+    if (odds->BasamakSayisi() > 0)
+    {
+        oddsTemp = odds->IlkBasamak;
+        while (oddsTemp->Sonraki != nullptr)
+        {
+            oddsTemp = oddsTemp->Sonraki;
+        }
+        if (evens->BasamakSayisi() > 0)
+        {
+            oddsTemp->Sonraki = evens->IlkBasamak;
+            this->IlkBasamak = odds->IlkBasamak;
+        }
+        else
+        {
+            this->IlkBasamak = odds->IlkBasamak;
+        }
+    }
+
+    evens = nullptr;
+    odds = nullptr;
+    delete evens;
+    delete odds;*/
+}
+
+void Sayi::TekBasaAl2()
+{
+    Basamak *temp = this->IlkBasamak;
+    Basamak *temp2 = this->IlkBasamak;
+    Basamak *head = this->IlkBasamak;
+    Basamak *end = this->IlkBasamak;
+    Basamak *headTemp = this->IlkBasamak;
+    int count = this->BasamakSayisi();
+
+
+    while (end->Sonraki != nullptr)
+    {
+        end = end->Sonraki;
+    }
+    if (count > 2)
+    {
+        while (temp->Sonraki->Sonraki != nullptr)
+        {
+            if (temp->Sonraki->BasamakDegeri % 2 == 0 && temp->Sonraki->Sonraki->Sonraki != nullptr)
+            {
+                cout << temp->BasamakDegeri << endl;
+                temp2 = temp->Sonraki;
+                temp->Sonraki = temp->Sonraki->Sonraki;
+                temp2->Sonraki = nullptr;
+                end->Sonraki = temp2;
+                end = end->Sonraki;
+            }
+            temp = temp->Sonraki;
+        }
+    }
+    cout << endl;
+
+    /*Basamak *temp = this->IlkBasamak;
+    Basamak *temp2 = this->IlkBasamak;
+    Basamak *head = this->IlkBasamak;
+    Basamak *end = this->IlkBasamak;
+    Basamak *endtemp = nullptr;
+    Basamak *headTemp = this->IlkBasamak;
+
+    int count = this->BasamakSayisi();
+
+
+    while (end->Sonraki != nullptr)
+    {
+        end = end->Sonraki;
+    }
+    endtemp = end;
+
+    for (int i = 0; i < this->BasamakSayisi() - calismaSayisi; i++)
+    {
+
+        if (temp->BasamakDegeri % 2 == 0)
+        {
+            temp2 = temp;
+            head = temp->Sonraki;
+            temp2->Sonraki = nullptr;
+            this->IlkBasamak = head;
+            end->Sonraki = temp2;
+            temp = head;
+        }
+        else
+        {
+            temp = temp->Sonraki;
+
+        }
+    }*/
 }
 
 
