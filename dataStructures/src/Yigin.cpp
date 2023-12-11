@@ -1,7 +1,5 @@
 #include "Yigin.h"
 #include<iostream>
-#include <exception>
-#include <iomanip>
 using namespace std;
 
 Yigin::Yigin()

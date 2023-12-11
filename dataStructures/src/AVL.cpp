@@ -1,9 +1,7 @@
 ﻿#include "AVL.h"
 #include "Yigin.h"
-#include <cmath>
-#include <iomanip>
 #include<iostream>
-#include<queue>
+#include <fstream>
 
 using namespace std;
 
@@ -34,9 +32,9 @@ int AVL::yukseklik()
     return yukseklik(root);
 }
 
-void AVL::postOrder() {
-    postOrder(0);
-}
+//void AVL::postOrder() {
+//    postOrder(0);
+//}
 
 
 void AVL::postOrder(DugumAVL* aktif)
@@ -51,11 +49,12 @@ void AVL::postOrder(DugumAVL* aktif)
         {
             //cout <<"yaprakta" << aktif->veri << "  ";
             AVLYigin->ekle(aktif->veri);
-            
+
         }
         else
         {
             //cout << "dugumde"<< aktif->veri << "  ";
+           
             AVLToplamDugumDeger += aktif->veri;
 
         }
@@ -163,7 +162,7 @@ DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
     {
         aktif->sag = sil(veri, aktif->sag);
     }
-    else//aradığımız düğümü bulduk
+    else
     {
         if (aktif->sol == 0 && aktif->sag == 0)
         {
@@ -194,9 +193,8 @@ DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
 
     int denge = dengesizlikYonu(aktif);
 
-    if (denge > 1) //sol tarafta dengesizlik
+    if (denge > 1)
     {
-        //sol sol dengesizliği
         if (dengesizlikYonu(aktif->sol) >= 0)
         {
             return sagaDondur(aktif);
@@ -208,14 +206,12 @@ DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
             return sagaDondur(aktif);
         }
     }
-    else if (denge < -1)//sag tarafta dengesizlik
+    else if (denge < -1)
     {
-        //sağ sağ durumu
         if (dengesizlikYonu(aktif->sag) <= 0)
         {
             return solaDondur(aktif);
         }
-        //sağ sol durumu
         if (dengesizlikYonu(aktif->sag) > 0)
         {
             aktif->sag = sagaDondur(aktif->sag);
@@ -241,3 +237,16 @@ int AVL::minDeger(DugumAVL* aktif)
     return aktif->veri;
 }
 
+int AVL::SatirSayisi(string path)
+{
+    int satirSayisi = 0;
+    string satir;
+    ifstream dosyaOku("src/Sayilar.txt");
+    while (std::getline(dosyaOku, satir))
+    {
+        satirSayisi++;
+    }
+    dosyaOku.close();
+    return satirSayisi;
+
+}

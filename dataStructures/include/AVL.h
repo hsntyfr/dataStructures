@@ -18,7 +18,7 @@ public:
 	void ekle(int veri);
 	void sil(int veri);
 	int yukseklik();
-	void postOrder();
+	//void postOrder();
 	int dengesizlikYonu(DugumAVL* aktif);
 	DugumAVL* solaDondur(DugumAVL* dugum);
 	DugumAVL* sagaDondur(DugumAVL* dugum);
@@ -28,6 +28,7 @@ public:
 	DugumAVL* ekle(int veri, DugumAVL* aktifDugum);
 	bool varmi(int aranan, DugumAVL* aktif);
 	int maxDeger(DugumAVL* aktif);
+	static int SatirSayisi(string path);
 
 	DugumAVL* root;
 	int AVLToplamDugumDeger;
