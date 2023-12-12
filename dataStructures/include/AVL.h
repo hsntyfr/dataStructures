@@ -30,8 +30,10 @@ public:
 	int maxDeger(DugumAVL* aktif);
 	static int SatirSayisi(string path);
 
+
 	DugumAVL* root;
 	int AVLToplamDugumDeger;
 	Yigin* AVLYigin;
+	char ascii;
 };
 #endif
