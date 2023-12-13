@@ -2,6 +2,7 @@
 #include "Yigin.h"
 #include<iostream>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -13,7 +14,19 @@ AVL::AVL()
 }
 AVL::~AVL()
 {
-    
+    //cout << "avl silindi" << endl;
+}
+void AVL::sil(DugumAVL* root)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
+
+    sil(root->sol);
+    sil(root->sag);
+
+    delete root;
 }
 bool AVL::varmi(int veri)
 {
@@ -249,4 +262,68 @@ int AVL::SatirSayisi(string path)
     dosyaOku.close();
     return satirSayisi;
 
+}
+
+void AVL::yazdir(AVL** dizi, int satirSayisi) {
+    for (int i = 0; i < satirSayisi; i++) {
+        if (dizi[i]->root != NULL) {
+            cout << dizi[i]->ascii;
+        }
+    }
+}
+
+int AVL::enKucukDegeriBul(AVL** dizi, int satirSayisi, int enKucuk = 99999, int silinecek = 0)
+{
+    for (int i = 0; i < satirSayisi; i++) {
+        if (dizi[i]->AVLYigin->getir() < enKucuk && dizi[i]->root != NULL) {
+            enKucuk = dizi[i]->AVLYigin->getir();
+            silinecek = i;
+        }
+    }
+    return silinecek;
+}
+
+int AVL::enBuyukDegeriBul(AVL** dizi, int satirSayisi, int enBuyuk = 0, int silinecek = 0)
+{
+    for (int i = 0; i < satirSayisi; i++) {
+        if (dizi[i]->AVLYigin->getir() > enBuyuk && dizi[i]->root != NULL) {
+            enBuyuk = dizi[i]->AVLYigin->getir();
+            silinecek = i;
+        }
+    }
+    return silinecek;
+}
+
+void AVL::avlYiginTemizleVePostOrder(AVL** dizi, int satirSayisi)
+{
+    for (int i = 0; i < satirSayisi; i++) {
+        if (dizi[i]->root != NULL) {
+            dizi[i]->AVLYigin->temizle();
+            dizi[i]->postOrder(dizi[i]->root);
+        }
+    }
+}
+
+void AVL::YazdirSonAVL(int index, AVL** dizi)
+{
+    if (dizi[index]->root != NULL)
+    {
+        /*cout << "==============================" << endl;
+        cout << "|                            |" << endl;
+        cout << "|                            |" << endl;
+        cout << "|     " << "Son Karakter : " << dizi[index]->ascii << setw(8) << "|" <<endl;
+        cout << "|     " << "AVL No       : " << setw(3) << index + 1 << "     |" << endl;
+        cout << "|                            |" << endl;
+        cout << "|                            |" << endl;
+        cout << "==============================" << endl;*/
+
+        std::cout << std::setw(30) << "" << std::endl;
+        std::cout << "|                            |\n";
+        std::cout << "|    Son Karakter  :  " << std::setw(7) << dizi[index]->ascii << "    |\n";
+        std::cout << "|    AVL No             :  " << std::setw(3) << index + 1 << "    |\n";
+        std::cout << "|                            |\n";
+        std::cout << "|                            |\n";
+        std::cout << std::setw(30) << "" << std::endl;
+
+    }
 }

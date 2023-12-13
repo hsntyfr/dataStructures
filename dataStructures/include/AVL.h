@@ -29,9 +29,17 @@ public:
 	bool varmi(int aranan, DugumAVL* aktif);
 	int maxDeger(DugumAVL* aktif);
 	static int SatirSayisi(string path);
+    void sil(DugumAVL* root);
+    static void yazdir(AVL** dizi, int satirSayisi);
+    static int enKucukDegeriBul(AVL** dizi, int satirSayisi, int enKucuk, int silinecek);
+    static int enBuyukDegeriBul(AVL** dizi, int satirSayisi, int enBuyuk, int silinecek);
+    static void avlYiginTemizleVePostOrder(AVL** dizi, int satirSayisi);
+    static void YazdirSonAVL(int index, AVL** dizi);
 
 
-	DugumAVL* root;
+
+
+    DugumAVL* root;
 	int AVLToplamDugumDeger;
 	Yigin* AVLYigin;
 	char ascii;

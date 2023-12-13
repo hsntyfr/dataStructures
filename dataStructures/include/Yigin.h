@@ -10,9 +10,11 @@ class Yigin
 {
 public:
     Yigin();
+    ~Yigin();
     void ekle(int veri);
 
     void cikar();
+    void temizle();
 
     int getir();
 private:

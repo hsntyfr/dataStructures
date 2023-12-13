@@ -1,7 +1,6 @@
-﻿#include <iostream>
+#include <iostream>
 #include "AVL.h"
 #include "Yigin.h"
-#include "DinamikDizi.h"
 #include <fstream>
 #include <sstream>
 
@@ -12,7 +11,6 @@ int main()
     string satir = "";
     ifstream dosya("src/Sayilar.txt");
     int satirSayisi = AVL::SatirSayisi("src/Sayilar.txt");
-    //cout << satirSayisi << endl;
 
     AVL** dizi = new AVL * [satirSayisi];
     int index = 0;
@@ -29,8 +27,8 @@ int main()
         }
         dizi[index]->postOrder(dizi[index]->root);
 
-        int ascii1 = dizi[index]->AVLToplamDugumDeger % (90 - 65 + 1) + 65;
-        dizi[index]->ascii = (char)ascii1;
+        int ascii = dizi[index]->AVLToplamDugumDeger % (90 - 65 + 1) + 65;
+        dizi[index]->ascii = (char)ascii;
         cout << dizi[index]->ascii;
         index++;
     }
@@ -41,47 +39,52 @@ int main()
     int enBuyuk = 0;
     int enKucuk = 99999;
     int sayac = 0;
-    int bitti = 0;
+    //int bitti = 0;
 
     while (true)
     {
-        //kucuk sayi cikti
-        for (int i = 0; i < satirSayisi; i++)
+        silinecek = AVL::enKucukDegeriBul(dizi, satirSayisi, enKucuk, silinecek);
+        /*for (int i = 0; i < satirSayisi; i++)
         {
             if (dizi[i]->AVLYigin->getir() < enKucuk && dizi[i]->root != NULL)
             {
                 enKucuk = dizi[i]->AVLYigin->getir();
                 silinecek = i;
             }
-
-        }
+        }*/
         //cout << enKucuk << endl;
-        enKucuk = 99999;
+        //enKucuk = 99999;
         dizi[silinecek]->AVLYigin->cikar();
         //cikan sayi yiginin sonuysa o yiginin rootu silindi
         if (dizi[silinecek]->AVLYigin->getir() == -1)
         {
+            dizi[silinecek]->sil(dizi[silinecek]->root);
             dizi[silinecek]->root = NULL;
             sayac++;
-            for (int i = 0; i < satirSayisi; i++)
+
+            AVL::yazdir(dizi, satirSayisi);
+            /*for (int i = 0; i < satirSayisi; i++)
             {
                 if (dizi[i]->root != NULL)
                 {
                     cout << dizi[i]->ascii;
                 }
-            }
+            }*/
 
             cout << endl;
 
-
-            for (int i = 0; i < satirSayisi; i++)
+            AVL::avlYiginTemizleVePostOrder(dizi, satirSayisi);
+            /*for (int i = 0; i < satirSayisi; i++)
             {
                 if (dizi[i]->root != NULL)
                 {
-                    dizi[i]->AVLYigin = new Yigin();
+                    dizi[i]->AVLYigin->temizle();
+
+                    //olmasa da olur gibi deneyip bakmak lazım
+                    //dizi[i]->AVLYigin = new Yigin();
                     dizi[i]->postOrder(dizi[i]->root);
                 }
-            }
+            }*/
             if (sayac + 1 == satirSayisi)
             {
                 int i = 0;
@@ -89,13 +92,30 @@ int main()
                 {
                     i++;
                 }
-                cout << i << endl;
-                return 0;
+                //cout << i << endl;
+
+                AVL::YazdirSonAVL(i, dizi);
+                /*dizi[i]->AVLYigin->cikar();
+                cout << dizi[i]->AVLYigin->getir();
+                dizi[i]->AVLYigin->cikar();
+
+                cout << dizi[i]->AVLYigin->getir();
+                dizi[i]->AVLYigin->cikar();
+                cout << dizi[i]->AVLYigin->getir();
+                dizi[i]->AVLYigin->cikar();
+                cout << dizi[i]->AVLYigin->getir();
+
+                dizi[i]->AVLYigin->cikar();
+                dizi[i]->AVLYigin->cikar();*/
+
+                break;
             }
             continue;
         }
 
-        for (int i = 0; i < satirSayisi; i++)
+        silinecek = AVL::enBuyukDegeriBul(dizi, satirSayisi, enBuyuk, silinecek);
+
+        /*for (int i = 0; i < satirSayisi; i++)
         {
             if (dizi[i]->AVLYigin->getir() > enBuyuk && dizi[i]->root != NULL)
             {
@@ -103,32 +123,38 @@ int main()
                 silinecek = i;
             }
 
-        }
+        }*/
         //cout << enBuyuk << endl;
-        enBuyuk = 0;
+        //enBuyuk = 0;
         dizi[silinecek]->AVLYigin->cikar();
 
         if (dizi[silinecek]->AVLYigin->getir() == -1)
         {
+            dizi[silinecek]->sil(dizi[silinecek]->root);
             dizi[silinecek]->root = NULL;
             sayac++;
 
-            for (int i = 0; i < satirSayisi; i++)
+            AVL::yazdir(dizi, satirSayisi);
+            /*for (int i = 0; i < satirSayisi; i++)
             {
                 if (dizi[i]->root != NULL)
                 {
                     cout << dizi[i]->ascii;
                 }
-            }
+            }*/
             cout << endl;
-            for (int i = 0; i < satirSayisi; i++)
+            AVL::avlYiginTemizleVePostOrder(dizi, satirSayisi);
+            /*for (int i = 0; i < satirSayisi; i++)
             {
                 if (dizi[i]->root != NULL)
                 {
-                    dizi[i]->AVLYigin = new Yigin();
+                    dizi[i]->AVLYigin->temizle();
+
+                    //olmasa da olur gibi deneyip bakmak lazım
+                    //dizi[i]->AVLYigin = new Yigin();
                     dizi[i]->postOrder(dizi[i]->root);
                 }
-            }
+            }*/
         }
         if (sayac + 1 == satirSayisi)
         {
@@ -137,11 +163,29 @@ int main()
             {
                 i++;
             }
-            cout << i << endl;
-            return 0;
+            //cout << i << endl;
+
+            AVL::YazdirSonAVL(i, dizi);
+
+/*            dizi[i]->AVLYigin->cikar();
+            cout << dizi[i]->AVLYigin->getir();
+            dizi[i]->AVLYigin->cikar();
+
+            cout << dizi[i]->AVLYigin->getir();
+            dizi[i]->AVLYigin->cikar();
+            cout << dizi[i]->AVLYigin->getir();
+            dizi[i]->AVLYigin->cikar();
+            cout << dizi[i]->AVLYigin->getir();
+            
+            dizi[i]->AVLYigin->cikar();
+            dizi[i]->AVLYigin->cikar();*/
+
+            break;
         }
 
-
+        //102 74 16 35 7 28
+        //30 49 179 63
+          //  5 1 74 130 2
     }
 
   
@@ -333,30 +377,6 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //cout << dizi[1]->AVLYigin->getir();
     
 
@@ -379,15 +399,17 @@ int main()
     cout << dizi[1]->AVLYigin->getir();
     dizi[1]->AVLYigin->cikar();
     cout << dizi[1]->AVLYigin->getir();*/
-    
 
 
-    
-    
+    for (int i = 0; i < satirSayisi; i++)
+    {
+        dizi[i]->AVLYigin->temizle();
+        delete dizi[i]->AVLYigin;
+        delete dizi[i]->root;
+        delete dizi[i];
+    }
 
-   
-    
-
+    delete[] dizi;
     return 0;
 
 

@@ -11,5 +11,5 @@ DugumAVL::DugumAVL(int veri)
 
 DugumAVL::~DugumAVL()
 {
-    cout <<" silindi";
+    //cout <<" silindi";
 }
