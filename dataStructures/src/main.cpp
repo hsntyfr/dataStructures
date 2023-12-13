@@ -34,19 +34,120 @@ int main()
         cout << dizi[index]->ascii;
         index++;
     }
+    cout << endl;
+
 
     int silinecek = 0;
     int enBuyuk = 0;
     int enKucuk = 99999;
-    int sayac = satirSayisi;
+    int sayac = 0;
     int bitti = 0;
 
- 
+    while (true)
+    {
+        //kucuk sayi cikti
+        for (int i = 0; i < satirSayisi; i++)
+        {
+            if (dizi[i]->AVLYigin->getir() < enKucuk && dizi[i]->root != NULL)
+            {
+                enKucuk = dizi[i]->AVLYigin->getir();
+                silinecek = i;
+            }
+
+        }
+        //cout << enKucuk << endl;
+        enKucuk = 99999;
+        dizi[silinecek]->AVLYigin->cikar();
+        //cikan sayi yiginin sonuysa o yiginin rootu silindi
+        if (dizi[silinecek]->AVLYigin->getir() == -1)
+        {
+            dizi[silinecek]->root = NULL;
+            sayac++;
+            for (int i = 0; i < satirSayisi; i++)
+            {
+                if (dizi[i]->root != NULL)
+                {
+                    cout << dizi[i]->ascii;
+                }
+            }
+
+            cout << endl;
+
+
+            for (int i = 0; i < satirSayisi; i++)
+            {
+                if (dizi[i]->root != NULL)
+                {
+                    dizi[i]->AVLYigin = new Yigin();
+                    dizi[i]->postOrder(dizi[i]->root);
+                }
+            }
+            if (sayac + 1 == satirSayisi)
+            {
+                int i = 0;
+                while (dizi[i]->root == NULL)
+                {
+                    i++;
+                }
+                cout << i << endl;
+                return 0;
+            }
+            continue;
+        }
+
+        for (int i = 0; i < satirSayisi; i++)
+        {
+            if (dizi[i]->AVLYigin->getir() > enBuyuk && dizi[i]->root != NULL)
+            {
+                enBuyuk = dizi[i]->AVLYigin->getir();
+                silinecek = i;
+            }
+
+        }
+        //cout << enBuyuk << endl;
+        enBuyuk = 0;
+        dizi[silinecek]->AVLYigin->cikar();
+
+        if (dizi[silinecek]->AVLYigin->getir() == -1)
+        {
+            dizi[silinecek]->root = NULL;
+            sayac++;
+
+            for (int i = 0; i < satirSayisi; i++)
+            {
+                if (dizi[i]->root != NULL)
+                {
+                    cout << dizi[i]->ascii;
+                }
+            }
+            cout << endl;
+            for (int i = 0; i < satirSayisi; i++)
+            {
+                if (dizi[i]->root != NULL)
+                {
+                    dizi[i]->AVLYigin = new Yigin();
+                    dizi[i]->postOrder(dizi[i]->root);
+                }
+            }
+        }
+        if (sayac + 1 == satirSayisi)
+        {
+            int i = 0;
+            while (dizi[i]->root == NULL)
+            {
+                i++;
+            }
+            cout << i << endl;
+            return 0;
+        }
+
+
+    }
 
   
     
 
-    for (int i = 0; i < satirSayisi; i++)
+    /*for (int i = 0; i < satirSayisi; i++)
     {
         if (dizi[i]->AVLYigin->getir() < enKucuk && dizi[i]->root != NULL)
         {
@@ -61,6 +162,7 @@ int main()
     if (dizi[silinecek]->AVLYigin->getir() == -1)
     {
         dizi[silinecek]->root = NULL;
+        sayac++;
 
     }
 
@@ -82,8 +184,7 @@ int main()
     if (dizi[silinecek]->AVLYigin->getir() == -1)
     {
         dizi[silinecek]->root = NULL;
-
-
+        sayac++;
     }
 
     for (int i = 0; i < satirSayisi; i++)
@@ -102,7 +203,7 @@ int main()
     if (dizi[silinecek]->AVLYigin->getir() == -1)
     {
         dizi[silinecek]->root = NULL;
-
+        sayac++;
     }
  
     for (int i = 0; i < satirSayisi; i++)
@@ -145,7 +246,7 @@ int main()
     if (dizi[silinecek]->AVLYigin->getir() == -1)
     {
         dizi[silinecek]->root = NULL;
-
+        sayac++;
     }
 
     for (int i = 0; i < satirSayisi; i++)
@@ -164,8 +265,7 @@ int main()
     if (dizi[silinecek]->AVLYigin->getir() == -1)
     {
         dizi[silinecek]->root = NULL;
-
-
+        sayac++;
     }
     for (int i = 0; i < satirSayisi; i++)
     {
@@ -182,7 +282,7 @@ int main()
     if (dizi[silinecek]->AVLYigin->getir() == -1)
     {
         dizi[silinecek]->root = NULL;
-
+        sayac++;
     }
 
     for (int i = 0; i < satirSayisi; i++)
@@ -192,7 +292,6 @@ int main()
             enBuyuk = dizi[i]->AVLYigin->getir();
             silinecek = i;
         }
-
     }
     cout << enBuyuk << endl;
     enBuyuk = 0;
@@ -201,8 +300,7 @@ int main()
     if (dizi[silinecek]->AVLYigin->getir() == -1)
     {
         dizi[silinecek]->root = NULL;
-
-
+        sayac++;
     }
 
     for (int i = 0; i < satirSayisi; i++)
@@ -212,22 +310,25 @@ int main()
             enKucuk = dizi[i]->AVLYigin->getir();
             silinecek = i;
         }
-
     }
     
 
-    for (int i = 0; i < satirSayisi; i++)
+    if (sayac + 1 == satirSayisi)
     {
-
-
-        if (dizi[i]->root != NULL)
+        for (int i = 0; i < satirSayisi; i++)
         {
-            cout << dizi[i]->ascii;
+            if (dizi[i]->root != NULL)
+            {
+                cout << dizi[i]->ascii;
+            }
         }
-
+        return 0;
     }
 
 
+    dizi[0]->AVLYigin->cikar();
+    cout << dizi[0]->AVLYigin->getir();
+    cout << sayac;*/
 
 
 
