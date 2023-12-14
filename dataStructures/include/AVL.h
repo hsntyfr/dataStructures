@@ -9,16 +9,12 @@ using namespace std;
 class AVL
 {
 public:
-
 	AVL();
 	~AVL();
-	DugumAVL* sil(int veri, DugumAVL* aktif);
-
-	bool varmi(int veri);
+	//DugumAVL* sil(int veri, DugumAVL* aktif);
 	void ekle(int veri);
-	void sil(int veri);
-	int yukseklik();
-	//void postOrder();
+	//void sil(int veri);
+	//int yukseklik();
 	int dengesizlikYonu(DugumAVL* aktif);
 	DugumAVL* solaDondur(DugumAVL* dugum);
 	DugumAVL* sagaDondur(DugumAVL* dugum);
@@ -26,7 +22,6 @@ public:
 	void postOrder(DugumAVL* index);
 	int yukseklik(DugumAVL* aktifDugum);
 	DugumAVL* ekle(int veri, DugumAVL* aktifDugum);
-	bool varmi(int aranan, DugumAVL* aktif);
 	int maxDeger(DugumAVL* aktif);
 	static int SatirSayisi(string path);
     void sil(DugumAVL* root);
@@ -35,9 +30,6 @@ public:
     static int enBuyukDegeriBul(AVL** dizi, int satirSayisi, int enBuyuk, int silinecek);
     static void avlYiginTemizleVePostOrder(AVL** dizi, int satirSayisi);
     static void YazdirSonAVL(int index, AVL** dizi);
-
-
-
 
     DugumAVL* root;
 	int AVLToplamDugumDeger;

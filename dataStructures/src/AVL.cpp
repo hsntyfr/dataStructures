@@ -28,27 +28,19 @@ void AVL::sil(DugumAVL* root)
 
     delete root;
 }
-bool AVL::varmi(int veri)
-{
-    return varmi(veri, root);
-}
+
 void AVL::ekle(int eklenecek)
 {
     root = ekle(eklenecek, root);
 }
-void AVL::sil(int veri)
+/*void AVL::sil(int veri)
 {
     root = sil(veri, root);
-}
-int AVL::yukseklik()
+}*/
+/*int AVL::yukseklik()
 {
     return yukseklik(root);
-}
-
-//void AVL::postOrder() {
-//    postOrder(0);
-//}
-
+}*/
 
 void AVL::postOrder(DugumAVL* aktif)
 {
@@ -88,14 +80,15 @@ DugumAVL* AVL::ekle(int veri, DugumAVL* aktifDugum)
     if (aktifDugum == 0)
         return new DugumAVL(veri);
 
-    else if (aktifDugum->veri < veri && !varmi(veri))
+    else if (aktifDugum->veri < veri)
     {
         aktifDugum->sag = ekle(veri, aktifDugum->sag);
         if (yukseklik(aktifDugum->sag) - yukseklik(aktifDugum->sol) > 1)
         {
             if (veri > aktifDugum->sag->veri)
+            {
                 aktifDugum = solaDondur(aktifDugum);
-
+            }
             else
             {
                 aktifDugum->sag = sagaDondur(aktifDugum->sag);
@@ -103,12 +96,11 @@ DugumAVL* AVL::ekle(int veri, DugumAVL* aktifDugum)
             }
         }
     }
-    else if (aktifDugum->veri > veri && !varmi(veri))
+    else if (aktifDugum->veri > veri)
     {
         aktifDugum->sol = ekle(veri, aktifDugum->sol);
         if (yukseklik(aktifDugum->sol) - yukseklik(aktifDugum->sag) > 1)
         {
-
             if (veri < aktifDugum->sol->veri)
                 aktifDugum = sagaDondur(aktifDugum);
             else
@@ -117,7 +109,6 @@ DugumAVL* AVL::ekle(int veri, DugumAVL* aktifDugum)
                 aktifDugum = sagaDondur(aktifDugum);
             }
         }
-
     }
     return aktifDugum;
 }
@@ -142,27 +133,8 @@ int AVL::maxDeger(DugumAVL* aktif)
 
     return aktif->veri;
 }
-bool AVL::varmi(int aranan, DugumAVL* aktif)
-{
-    if (aktif->veri < aranan)
-    {
-        if (aktif->sag)
-            return varmi(aranan, aktif->sag);
-        else
-            return 0;
-    }
-    else if (aktif->veri > aranan)
-    {
-        if (aktif->sol)
-            return varmi(aranan, aktif->sol);
-        return 0;
-    }
-    else
-    {
-        return aktif;
-    }
-}
-DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
+
+/*DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
 {
     if (aktif == 0)
         return 0;
@@ -199,8 +171,6 @@ DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
             aktif->veri = minDeger(aktif->sag);
             sil(aktif->veri, aktif->sag);
         }
-
-
     }
 
 
@@ -212,7 +182,6 @@ DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
         {
             return sagaDondur(aktif);
         }
-        //sol sag durumu
         if (dengesizlikYonu(aktif->sol) < 0)
         {
             aktif->sol = solaDondur(aktif->sol);
@@ -232,7 +201,7 @@ DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
         }
     }
     return aktif;
-}
+}*/
 
 
 int AVL::dengesizlikYonu(DugumAVL* aktif)
@@ -308,22 +277,13 @@ void AVL::YazdirSonAVL(int index, AVL** dizi)
 {
     if (dizi[index]->root != NULL)
     {
-        /*cout << "==============================" << endl;
+        cout << "==============================" << endl;
         cout << "|                            |" << endl;
         cout << "|                            |" << endl;
-        cout << "|     " << "Son Karakter : " << dizi[index]->ascii << setw(8) << "|" <<endl;
-        cout << "|     " << "AVL No       : " << setw(3) << index + 1 << "     |" << endl;
+        cout << "|    Son Karakter  : " << dizi[index]->ascii << "       |" << endl;
+        cout << "|    AVL No        : " << setw(3) << index + 1 << "     |" << endl;
         cout << "|                            |" << endl;
         cout << "|                            |" << endl;
-        cout << "==============================" << endl;*/
-
-        std::cout << std::setw(30) << "" << std::endl;
-        std::cout << "|                            |\n";
-        std::cout << "|    Son Karakter  :  " << std::setw(7) << dizi[index]->ascii << "    |\n";
-        std::cout << "|    AVL No             :  " << std::setw(3) << index + 1 << "    |\n";
-        std::cout << "|                            |\n";
-        std::cout << "|                            |\n";
-        std::cout << std::setw(30) << "" << std::endl;
-
+        cout << "==============================" << endl;
     }
 }

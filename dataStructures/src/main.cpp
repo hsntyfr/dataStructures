@@ -62,6 +62,7 @@ int main()
             dizi[silinecek]->root = NULL;
             sayac++;
 
+            cout << "\033[2J\033[1;1H";
             AVL::yazdir(dizi, satirSayisi);
             /*for (int i = 0; i < satirSayisi; i++)
             {
@@ -94,6 +95,7 @@ int main()
                 }
                 //cout << i << endl;
 
+                cout << "\033[2J\033[1;1H";
                 AVL::YazdirSonAVL(i, dizi);
                 /*dizi[i]->AVLYigin->cikar();
                 cout << dizi[i]->AVLYigin->getir();
@@ -134,6 +136,7 @@ int main()
             dizi[silinecek]->root = NULL;
             sayac++;
 
+            cout << "\033[2J\033[1;1H";
             AVL::yazdir(dizi, satirSayisi);
             /*for (int i = 0; i < satirSayisi; i++)
             {
@@ -164,7 +167,8 @@ int main()
                 i++;
             }
             //cout << i << endl;
-
+            
+            cout << "\033[2J\033[1;1H";
             AVL::YazdirSonAVL(i, dizi);
 
 /*            dizi[i]->AVLYigin->cikar();
