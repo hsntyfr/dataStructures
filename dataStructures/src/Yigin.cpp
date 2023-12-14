@@ -1,53 +1,56 @@
 #include "Yigin.h"
 #include<iostream>
+
 using namespace std;
 
 Yigin::Yigin()
 {
-    tepe = 0;
+    Tepe = 0;
 }
+
 Yigin::~Yigin()
 {
-    //cout << "yigindan sayi silindi" << endl;
+
 }
-void Yigin::ekle(int veri)
+
+void Yigin::Ekle(int veri)
 {
     DugumYigin* yeni = new DugumYigin(veri);
-    if (tepe != 0)
-        yeni->sonraki = tepe;
-    tepe = yeni;
-}
-void Yigin::temizle()
-{
-    while (tepe != NULL)
+    if (Tepe != 0)
     {
-        DugumYigin* silinecek = tepe;
-        tepe = tepe->sonraki;
+        yeni->Sonraki = Tepe;
+    }
+    Tepe = yeni;
+}
+
+void Yigin::Temizle()
+{
+    while (Tepe != NULL)
+    {
+        DugumYigin* silinecek = Tepe;
+        Tepe = Tepe->Sonraki;
         delete silinecek;
     }
 }
-void Yigin::cikar()
 
+void Yigin::Cikar()
 {
-    if (tepe != 0)
+    if (Tepe != 0)
     {
-        DugumYigin* silinecek = tepe;
-        tepe = tepe->sonraki;
+        DugumYigin* silinecek = Tepe;
+        Tepe = Tepe->Sonraki;
         delete silinecek;
-
     }
-
 }
 
-int Yigin::getir()
+int Yigin::Getir()
 {
-    if (tepe != 0)
+    if (Tepe != 0)
     {
-        return tepe->veri;
+        return Tepe->Veri;
     }
     else
     {
         return -1;
     }
-    
 }

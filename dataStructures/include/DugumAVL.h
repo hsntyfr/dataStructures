@@ -7,9 +7,9 @@ public:
     DugumAVL(int veri);
     ~DugumAVL();
 
-    int veri;
-    DugumAVL* sol;
-    DugumAVL* sag;
+    int Veri;
+    DugumAVL* Sol;
+    DugumAVL* Sag;
 };
 
 #endif

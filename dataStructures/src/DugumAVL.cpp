@@ -5,11 +5,11 @@ using namespace std;
 
 DugumAVL::DugumAVL(int veri)
 {
-    this->veri = veri;
-    sol = sag = 0;
+    this->Veri = veri;
+    Sol = Sag = 0;
 }
 
 DugumAVL::~DugumAVL()
 {
-    //cout <<" silindi";
+
 }

@@ -3,279 +3,212 @@
 #include<iostream>
 #include <fstream>
 #include <iomanip>
+#include <sstream>
 
 using namespace std;
 
 AVL::AVL()
 {
-    root = 0;
+    Root = 0;
     AVLToplamDugumDeger = 0;
     AVLYigin = new Yigin();
 }
+
 AVL::~AVL()
 {
-    //cout << "avl silindi" << endl;
+
 }
-void AVL::sil(DugumAVL* root)
+
+void AVL::Sil(DugumAVL* root)
 {
     if (root == nullptr)
     {
         return;
     }
 
-    sil(root->sol);
-    sil(root->sag);
+    Sil(root->Sol);
+    Sil(root->Sag);
 
     delete root;
 }
 
-void AVL::ekle(int eklenecek)
+void AVL::Ekle(int eklenecek)
 {
-    root = ekle(eklenecek, root);
+    Root = Ekle(eklenecek, Root);
 }
-/*void AVL::sil(int veri)
-{
-    root = sil(veri, root);
-}*/
-/*int AVL::yukseklik()
-{
-    return yukseklik(root);
-}*/
 
-void AVL::postOrder(DugumAVL* aktif)
+void AVL::PostOrder(DugumAVL* aktif)
 {
     if (aktif)
     {
-
-        postOrder(aktif->sol);
-        postOrder(aktif->sag);
+        PostOrder(aktif->Sol);
+        PostOrder(aktif->Sag);
             
-        if (aktif->sag == NULL && aktif->sol == NULL)
+        if (aktif->Sag == NULL && aktif->Sol == NULL)
         {
-            //cout <<"yaprakta" << aktif->veri << "  ";
-            AVLYigin->ekle(aktif->veri);
-
+            AVLYigin->Ekle(aktif->Veri);
         }
         else
         {
-            //cout << "dugumde"<< aktif->veri << "  ";
-           
-            AVLToplamDugumDeger += aktif->veri;
-
+            AVLToplamDugumDeger += aktif->Veri;
         }
     }
 }
 
-int AVL::yukseklik(DugumAVL* aktifDugum)
+int AVL::Yukseklik(DugumAVL* aktifDugum)
 {
     if (aktifDugum)
     {
-        return 1 + max(yukseklik(aktifDugum->sol),
-            yukseklik(aktifDugum->sag));
+        return 1 + max(Yukseklik(aktifDugum->Sol), Yukseklik(aktifDugum->Sag));
     }
     return -1;
 }
-DugumAVL* AVL::ekle(int veri, DugumAVL* aktifDugum)
+
+DugumAVL* AVL::Ekle(int veri, DugumAVL* aktifDugum)
 {
     if (aktifDugum == 0)
-        return new DugumAVL(veri);
-
-    else if (aktifDugum->veri < veri)
     {
-        aktifDugum->sag = ekle(veri, aktifDugum->sag);
-        if (yukseklik(aktifDugum->sag) - yukseklik(aktifDugum->sol) > 1)
+        return new DugumAVL(veri);
+    }
+    else if (aktifDugum->Veri < veri)
+    {
+        aktifDugum->Sag = Ekle(veri, aktifDugum->Sag);
+        if (Yukseklik(aktifDugum->Sag) - Yukseklik(aktifDugum->Sol) > 1)
         {
-            if (veri > aktifDugum->sag->veri)
+            if (veri > aktifDugum->Sag->Veri)
             {
-                aktifDugum = solaDondur(aktifDugum);
+                aktifDugum = SolaDondur(aktifDugum);
             }
             else
             {
-                aktifDugum->sag = sagaDondur(aktifDugum->sag);
-                aktifDugum = solaDondur(aktifDugum);
+                aktifDugum->Sag = SagaDondur(aktifDugum->Sag);
+                aktifDugum = SolaDondur(aktifDugum);
             }
         }
     }
-    else if (aktifDugum->veri > veri)
+    else if (aktifDugum->Veri > veri)
     {
-        aktifDugum->sol = ekle(veri, aktifDugum->sol);
-        if (yukseklik(aktifDugum->sol) - yukseklik(aktifDugum->sag) > 1)
+        aktifDugum->Sol = Ekle(veri, aktifDugum->Sol);
+        if (Yukseklik(aktifDugum->Sol) - Yukseklik(aktifDugum->Sag) > 1)
         {
-            if (veri < aktifDugum->sol->veri)
-                aktifDugum = sagaDondur(aktifDugum);
+            if (veri < aktifDugum->Sol->Veri)
+                aktifDugum = SagaDondur(aktifDugum);
             else
             {
-                aktifDugum->sol = solaDondur(aktifDugum->sol);
-                aktifDugum = sagaDondur(aktifDugum);
+                aktifDugum->Sol = SolaDondur(aktifDugum->Sol);
+                aktifDugum = SagaDondur(aktifDugum);
             }
         }
     }
     return aktifDugum;
 }
-DugumAVL* AVL::solaDondur(DugumAVL* buyukEbeveyn)
+
+DugumAVL* AVL::SolaDondur(DugumAVL* buyukEbeveyn)
 {
-    DugumAVL* sagCocuk = buyukEbeveyn->sag;
-    buyukEbeveyn->sag = sagCocuk->sol;
-    sagCocuk->sol = buyukEbeveyn;
+    DugumAVL* sagCocuk = buyukEbeveyn->Sag;
+    buyukEbeveyn->Sag = sagCocuk->Sol;
+    sagCocuk->Sol = buyukEbeveyn;
     return sagCocuk;
 }
-DugumAVL* AVL::sagaDondur(DugumAVL* buyukEbeveyn)
+
+DugumAVL* AVL::SagaDondur(DugumAVL* buyukEbeveyn)
 {
-    DugumAVL* solCocuk = buyukEbeveyn->sol;
-    buyukEbeveyn->sol = solCocuk->sag;
-    solCocuk->sag = buyukEbeveyn;
+    DugumAVL* solCocuk = buyukEbeveyn->Sol;
+    buyukEbeveyn->Sol = solCocuk->Sag;
+    solCocuk->Sag = buyukEbeveyn;
     return solCocuk;
 }
-int AVL::maxDeger(DugumAVL* aktif)
-{
-    if (aktif->sag)
-        return maxDeger(aktif->sag);
 
-    return aktif->veri;
+int AVL::MaxDeger(DugumAVL* aktif)
+{
+    if (aktif->Sag)
+    {
+        return MaxDeger(aktif->Sag);
+    }
+    return aktif->Veri;
 }
 
-/*DugumAVL* AVL::sil(int veri, DugumAVL* aktif)
+int AVL::DengesizlikYonu(DugumAVL* aktif)
 {
     if (aktif == 0)
+    {
         return 0;
-
-    if (veri < aktif->veri)
-    {
-        aktif->sol = sil(veri, aktif->sol);
     }
-    else if (veri > aktif->veri)
-    {
-        aktif->sag = sil(veri, aktif->sag);
-    }
-    else
-    {
-        if (aktif->sol == 0 && aktif->sag == 0)
-        {
-            delete aktif;
-            aktif = 0;
-        }
-        else if (aktif->sol == 0)
-        {
-            DugumAVL* sil = aktif->sag;
-            *aktif = *aktif->sag;
-            delete sil;
-        }
-        else if (aktif->sag == 0)
-        {
-            DugumAVL* sil = aktif->sol;
-            *aktif = *aktif->sol;
-            delete sil;
-        }
-        else
-        {
-            aktif->veri = minDeger(aktif->sag);
-            sil(aktif->veri, aktif->sag);
-        }
-    }
-
-
-    int denge = dengesizlikYonu(aktif);
-
-    if (denge > 1)
-    {
-        if (dengesizlikYonu(aktif->sol) >= 0)
-        {
-            return sagaDondur(aktif);
-        }
-        if (dengesizlikYonu(aktif->sol) < 0)
-        {
-            aktif->sol = solaDondur(aktif->sol);
-            return sagaDondur(aktif);
-        }
-    }
-    else if (denge < -1)
-    {
-        if (dengesizlikYonu(aktif->sag) <= 0)
-        {
-            return solaDondur(aktif);
-        }
-        if (dengesizlikYonu(aktif->sag) > 0)
-        {
-            aktif->sag = sagaDondur(aktif->sag);
-            return solaDondur(aktif);
-        }
-    }
-    return aktif;
-}*/
-
-
-int AVL::dengesizlikYonu(DugumAVL* aktif)
-{
-    if (aktif == 0)
-        return 0;
-    return yukseklik(aktif->sol) - yukseklik(aktif->sag);
+    return Yukseklik(aktif->Sol) - Yukseklik(aktif->Sag);
 }
 
-int AVL::minDeger(DugumAVL* aktif)
+int AVL::MinDeger(DugumAVL* aktif)
 {
-    if (aktif->sol)
-        return maxDeger(aktif->sol);
-
-    return aktif->veri;
+    if (aktif->Sol)
+    {
+        return MaxDeger(aktif->Sol);
+    }
+    return aktif->Veri;
 }
 
 int AVL::SatirSayisi(string path)
 {
     int satirSayisi = 0;
     string satir;
-    ifstream dosyaOku("src/Sayilar.txt");
+    ifstream dosyaOku(path);
     while (std::getline(dosyaOku, satir))
     {
         satirSayisi++;
     }
     dosyaOku.close();
     return satirSayisi;
-
 }
 
-void AVL::yazdir(AVL** dizi, int satirSayisi) {
-    for (int i = 0; i < satirSayisi; i++) {
-        if (dizi[i]->root != NULL) {
+void AVL::Yazdir(AVL** dizi, int satirSayisi)
+{
+    cout << "\033[2J\033[1;1H";
+    for (int i = 0; i < satirSayisi; i++)
+    {
+        if (dizi[i]->Root != NULL) {
             cout << dizi[i]->ascii;
         }
     }
 }
 
-int AVL::enKucukDegeriBul(AVL** dizi, int satirSayisi, int enKucuk = 99999, int silinecek = 0)
+int AVL::EnKucukDegeriBul(AVL** dizi, int satirSayisi, int enKucuk = 99999, int silinecek = 0)
 {
     for (int i = 0; i < satirSayisi; i++) {
-        if (dizi[i]->AVLYigin->getir() < enKucuk && dizi[i]->root != NULL) {
-            enKucuk = dizi[i]->AVLYigin->getir();
+        if (dizi[i]->AVLYigin->Getir() < enKucuk && dizi[i]->Root != NULL)
+        {
+            enKucuk = dizi[i]->AVLYigin->Getir();
             silinecek = i;
         }
     }
     return silinecek;
 }
 
-int AVL::enBuyukDegeriBul(AVL** dizi, int satirSayisi, int enBuyuk = 0, int silinecek = 0)
+int AVL::EnBuyukDegeriBul(AVL** dizi, int satirSayisi, int enBuyuk = 0, int silinecek = 0)
 {
-    for (int i = 0; i < satirSayisi; i++) {
-        if (dizi[i]->AVLYigin->getir() > enBuyuk && dizi[i]->root != NULL) {
-            enBuyuk = dizi[i]->AVLYigin->getir();
+    for (int i = 0; i < satirSayisi; i++)
+    {
+        if (dizi[i]->AVLYigin->Getir() > enBuyuk && dizi[i]->Root != NULL)
+        {
+            enBuyuk = dizi[i]->AVLYigin->Getir();
             silinecek = i;
         }
     }
     return silinecek;
 }
 
-void AVL::avlYiginTemizleVePostOrder(AVL** dizi, int satirSayisi)
+void AVL::AVLYiginTemizleVePostOrder(AVL** dizi, int satirSayisi)
 {
     for (int i = 0; i < satirSayisi; i++) {
-        if (dizi[i]->root != NULL) {
-            dizi[i]->AVLYigin->temizle();
-            dizi[i]->postOrder(dizi[i]->root);
+        if (dizi[i]->Root != NULL) {
+            dizi[i]->AVLYigin->Temizle();
+            dizi[i]->PostOrder(dizi[i]->Root);
         }
     }
 }
 
 void AVL::YazdirSonAVL(int index, AVL** dizi)
 {
-    if (dizi[index]->root != NULL)
+    cout << "\033[2J\033[1;1H";
+    if (dizi[index]->Root != NULL)
     {
         cout << "==============================" << endl;
         cout << "|                            |" << endl;
@@ -286,4 +219,30 @@ void AVL::YazdirSonAVL(int index, AVL** dizi)
         cout << "|                            |" << endl;
         cout << "==============================" << endl;
     }
+}
+
+void AVL::AVLOlustur(AVL** &dizi, string path)
+{
+    string satir = "";
+    ifstream dosya(path);
+    int index = 0;
+    while (getline(dosya, satir))
+    {
+        istringstream iss(satir);
+        int sayi;
+        dizi[index] = new AVL();
+
+
+        while (iss >> sayi)
+        {
+            dizi[index]->Ekle(sayi);
+        }
+        dizi[index]->PostOrder(dizi[index]->Root);
+
+        int ascii = dizi[index]->AVLToplamDugumDeger % (90 - 65 + 1) + 65;
+        dizi[index]->ascii = (char) ascii;
+        cout << dizi[index]->ascii;
+        index++;
+    }
+    dosya.close();
 }

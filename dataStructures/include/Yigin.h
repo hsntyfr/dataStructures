@@ -4,6 +4,7 @@
 #include<exception>
 #include<iostream>
 #include <iomanip>
+
 using namespace std;
 
 class Yigin
@@ -11,14 +12,12 @@ class Yigin
 public:
     Yigin();
     ~Yigin();
-    void ekle(int veri);
+    void Ekle(int veri);
+    void Cikar();
+    void Temizle();
+    int Getir();
 
-    void cikar();
-    void temizle();
-
-    int getir();
-private:
-    DugumYigin* tepe;
+    DugumYigin* Tepe;
 };
 
 #endif

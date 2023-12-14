@@ -2,10 +2,10 @@
 
 DugumYigin::DugumYigin(int veri)
 {
-    this->veri = veri;
-    sonraki = 0;
+    this->Veri = veri;
+    Sonraki = 0;
 }
 DugumYigin::~DugumYigin()
 {
-    //cout << "yigindan sayi silindi" << endl;
+
 }
