@@ -1,4 +1,4 @@
-﻿#include "AVL.h"
+#include "AVL.h"
 #include "Yigin.h"
 #include<iostream>
 #include <fstream>
